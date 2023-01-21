@@ -1,4 +1,8 @@
+import { Shows } from './../../shared/models/cord.model';
+import { ApiService } from './../../core/services/api/api.service';
 import { Component, OnInit } from '@angular/core';
+import { first } from 'rxjs';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-home',
@@ -6,10 +10,36 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  shows: Shows[] = [];
+  loading: boolean = true;
 
-  constructor() { }
+  private searchUrl = 'show';
 
+  constructor(private apiService: ApiService) { }
+
+  /**
+  * On init function
+  */
   ngOnInit(): void {
+    this.searchFilmsByName(this.searchUrl);
   }
 
+  /**
+  * Function to get films searched by name
+  */
+  searchFilmsByName(search: string): void {
+    this.apiService.searchTvShows(search)
+      .pipe(
+        first(),
+      )
+      .subscribe({
+        next: (response: Shows[]) => {
+          this.shows = response;
+          this.loading = false;
+        },
+        error: (err: HttpErrorResponse) => {
+          this.loading = false;
+        }
+      });
+  }
 }
