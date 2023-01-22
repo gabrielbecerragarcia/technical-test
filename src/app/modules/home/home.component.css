@@ -1,3 +1,60 @@
 .loader {
   height: 100vh;
 }
+
+.container {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+.show-item {
+  color: white;
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.show-image {
+  width: 100%;
+  border-radius: 20px;
+}
+
+.show-info {
+  margin-top: 8px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.show-name {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.show-rating {
+  color: gray;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+@media (min-width: 768px) {
+  .container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 40px 100px;
+  }
+
+  .show-item {
+    width: 27%;
+  }
+}
+
+@media (min-width: 1440px) {
+  .container {
+    margin: auto;
+    max-width: 1440px;
+  }
+}
+

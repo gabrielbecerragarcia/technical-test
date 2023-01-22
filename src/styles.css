@@ -12,7 +12,8 @@
 body {
   margin: 0px;
   font-family: 'Lato', sans-serif;
-  overflow: hidden;
+  overflow: scroll;
+  background-color: #181730;
 }
 
 

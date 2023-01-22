@@ -1,4 +1,12 @@
-<p *ngIf="!loading">home works!</p>
+<div class="container" *ngIf="!loading">
+  <div class="show-item" *ngFor="let item of shows">
+    <img class="show-image" [src]="item.show.image.medium" alt="show-image">
+    <div class="show-info">
+      <p class="show-name"> {{ item.show.name }} </p>
+      <p class="show-rating"> {{ item.show.rating.average? item.show.rating.average : '-.-' }} </p>
+    </div>
+  </div>
+</div>
 
 <div class="loader" *ngIf="loading">
   <app-spinner></app-spinner>
