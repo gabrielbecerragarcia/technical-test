@@ -1,5 +1,5 @@
 <div class="container" *ngIf="!loading">
-  <div class="show-item" *ngFor="let item of shows">
+  <div class="show-item" *ngFor="let item of shows" (click)="showDetails(item.show.id)">
     <img class="show-image" [src]="item.show.image.medium" alt="show-image">
     <div class="show-info">
       <p class="show-name"> {{ item.show.name }} </p>

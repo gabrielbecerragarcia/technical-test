@@ -1,4 +1,4 @@
-export interface Shows {
+export interface ShowElement {
   score: number;
   show: Show;
 }

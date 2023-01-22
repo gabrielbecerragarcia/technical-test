@@ -1,1 +1,7 @@
-<p>detail-item works!</p>
+<div class="container" *ngIf="!loading">
+
+</div>
+
+<div class="loader" *ngIf="loading">
+  <app-spinner></app-spinner>
+</div>

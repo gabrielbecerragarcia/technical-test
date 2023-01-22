@@ -1,5 +1,6 @@
 import { HomeModule } from './../../modules/home/home.module';
 import { Routes } from '@angular/router';
+import { DetailGuard } from 'src/app/core/guards/detail.guard';
 
 export const ROUTES: Routes = [
     {
@@ -9,9 +10,10 @@ export const ROUTES: Routes = [
         data: { title: 'Home tvmaze'}
     },
     {
-        path: 'detail',
+        path: 'detail/:id',
         pathMatch: 'prefix',
         loadChildren: () => import('../../modules/detail-item/detail-item.module').then(m => m.DetailItemModule),
+        canActivate: [DetailGuard],
         data: { title: 'detail item' }
     }
 ];
