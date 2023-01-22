@@ -1,4 +1,4 @@
-import { SearchNames } from './../../shared/enums';
+import { SearchOptions } from './../../shared/enums';
 import { Shows } from './../../shared/models/cord.model';
 import { ApiService } from './../../core/services/api/api.service';
 import { Component, OnInit } from '@angular/core';
@@ -14,7 +14,8 @@ export class HomeComponent implements OnInit {
   shows: Shows[] = [];
   loading: boolean = true;
 
-  private searchUrl: string = SearchNames.defaultSearchName;
+  private searchUrl: string = SearchOptions.defaultSearchName;
+  private itemsToDisplay: number = SearchOptions.defaultItemsToDisplay;
 
   constructor(private apiService: ApiService) { }
 
@@ -35,7 +36,8 @@ export class HomeComponent implements OnInit {
       )
       .subscribe({
         next: (response: Shows[]) => {
-          this.shows = response;
+          this.shows = response.length >= this.itemsToDisplay ? response.slice(0, this.itemsToDisplay): response.slice(0);
+          console.log(this.shows)
           this.loading = false;
         },
         error: (err: HttpErrorResponse) => {

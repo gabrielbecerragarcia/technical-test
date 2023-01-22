@@ -1,3 +1,4 @@
-export enum SearchNames {
-  defaultSearchName = 'show'
+export enum SearchOptions {
+  defaultSearchName = 'show',
+  defaultItemsToDisplay = 6
 }
