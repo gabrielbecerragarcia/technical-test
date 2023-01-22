@@ -1,3 +1,4 @@
+import { SearchNames } from './../../shared/enums';
 import { Shows } from './../../shared/models/cord.model';
 import { ApiService } from './../../core/services/api/api.service';
 import { Component, OnInit } from '@angular/core';
@@ -13,7 +14,7 @@ export class HomeComponent implements OnInit {
   shows: Shows[] = [];
   loading: boolean = true;
 
-  private searchUrl = 'show';
+  private searchUrl: string = SearchNames.defaultSearchName;
 
   constructor(private apiService: ApiService) { }
 
@@ -28,7 +29,7 @@ export class HomeComponent implements OnInit {
   * Function to get films searched by name
   */
   searchFilmsByName(search: string): void {
-    this.apiService.searchTvShows(search)
+    this.apiService.searchTvShowsByName(search)
       .pipe(
         first(),
       )

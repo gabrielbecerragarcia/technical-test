@@ -14,7 +14,7 @@ export class ApiService {
   /**
    * Function to search through all shows in the tvmaze database by the given show name
    */
-  searchTvShows(showName: string): Observable<Shows[]> {
+  searchTvShowsByName(showName: string): Observable<Shows[]> {
     return this.http.get<Shows[]>(`${environment.apiURL}?q=${showName}`);
   }
 }
