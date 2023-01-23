@@ -1,3 +1,19 @@
 .loader {
   height: 100vh;
 }
+
+.container {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.show-info {
+  position: relative;
+  padding: 15px 20px;
+}
+
+.show-description {
+  font-size: 14px;
+  margin-top: 14px;
+}
+

@@ -1,5 +1,5 @@
 import { SearchOptions } from './../../shared/enums';
-import { ShowElement } from './../../shared/models/cord.model';
+import { ShowElement } from '../../shared/models/shows.model';
 import { ApiService } from './../../core/services/api/api.service';
 import { Component, OnInit } from '@angular/core';
 import { first } from 'rxjs';

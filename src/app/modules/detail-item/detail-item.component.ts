@@ -2,7 +2,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ApiService } from 'src/app/core/services/api/api.service';
-import { ShowElement } from 'src/app/shared/models/cord.model';
+import { ShowItem } from 'src/app/shared/models/show.model';
 import { first } from 'rxjs';
 
 @Component({
@@ -11,9 +11,10 @@ import { first } from 'rxjs';
   styleUrls: ['./detail-item.component.css']
 })
 export class DetailItemComponent implements OnInit {
-  show: ShowElement | undefined;
+  show!: ShowItem;
   loading: boolean = true;
   showId: number = 0;
+  parsedGenres: string = ''
 
   constructor(
     private apiService: ApiService,
@@ -34,14 +35,44 @@ export class DetailItemComponent implements OnInit {
         first(),
       )
       .subscribe({
-        next: (response: ShowElement) => {
+        next: (response: ShowItem) => {
+          console.log(response)
           this.show = response;
+          this.parseDescription();
+          this.parseGenres();
           this.loading = false;
         },
         error: (err: HttpErrorResponse) => {
           this.loading = false;
         }
       });
+  }
+
+  /**
+  * Function to parse to float average string
+  */
+  getRating(): number {
+    if (this.show.rating.average) {
+      return this.show.rating.average;
+    } else {
+      return -1;
+    }
+  }
+
+  /**
+  * Function to parse description string
+  */
+  parseDescription(): void {
+    this.show.summary = this.show.summary.replace( /(<([^>]+)>)/ig, '');
+  }
+
+  /**
+  * Function to parse genres array
+  */
+  parseGenres(): void {
+    if (this.show.genres) {
+      this.parsedGenres = this.show.genres.join("   •   ");
+    }
   }
 
 }
