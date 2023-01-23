@@ -3,7 +3,7 @@
     <div class="show-details">
       <p class="show-name"> {{ show.name }} </p>
       <p class="show-description"> {{ show.summary }} </p>
-      <p class="show-description"> {{ parsedGenres }} </p>
+      <app-star-score [rating]="getRating()"></app-star-score>
     </div>
   </div>
   <img class="show-image" [src]="show.image.medium" alt="show-image">

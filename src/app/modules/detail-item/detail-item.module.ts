@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DetailItemRoutingModule } from './detail-item-routing.module';
 import { SpinnerModule } from 'src/app/shared/components/spinner/spinner.module';
+import { StarScoreModule } from 'src/app/shared/components/star-score/star-score.module';
 
 
 
@@ -13,7 +14,8 @@ import { SpinnerModule } from 'src/app/shared/components/spinner/spinner.module'
   imports: [
     CommonModule,
     DetailItemRoutingModule,
-    SpinnerModule
+    SpinnerModule,
+    StarScoreModule
   ]
 })
 export class DetailItemModule { }
