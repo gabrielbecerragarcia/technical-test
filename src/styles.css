@@ -1,45 +1,80 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css?family=Lato:300,400,700,900');
 
+:root {
+  --primary-color: #fff;
+  --secondary-color: #808080;
+  --default-border-radius: 20px;
+  --default-font-size: 12px;
+  --small-font-size: 14px;
+  --medium-font-size: 16px;
+  --large-font-size: 18px;
+  --extra-large-font-size: 22px;
+  --default-padding: 40px 100px;
+  --image-width: 27%;
+  --default-shadow: rgba(247, 247, 247, 0.7);
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   font-family: 'Lato', sans-serif;
-  font-size: 12px;
+  font-size: var(--default-font-size);
 }
 
 body {
-  margin: 0px;
+  margin: 0;
   font-family: 'Lato', sans-serif;
   overflow: scroll;
-  background-color: #181730;
-  color: white;
+  background-image: url(https://www.hbomax.com/static/wef/img/bg-gradient.jpg);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+  color: var(--primary-color);
+}
+
+.loader {
+  height: 100vh;
 }
 
 .show-image {
   width: 100%;
-  border-radius: 20px;
+}
+
+.radius {
+  border-radius: var(--default-border-radius);
+}
+
+.show-image.detail {
+  border-radius: 0px;
 }
 
 .show-name {
-  font-size: 22px;
+  font-size: var(--extra-large-font-size);
+}
+
+.bold {
   font-weight: bold;
 }
 
 .gray {
-  color: gray;
+  color: var(--secondary-color);
 }
 
 @media (min-width: 768px) {
   .show-name {
-    font-size: 16px;
+    font-size: var(--medium-font-size);
+  }
+  .show-image.detail {
+    border-radius: var(--default-border-radius);
   }
 }
 
 @media (min-width: 1024px) {
   .show-name {
-    font-size: 22px;
+    font-size: var(--extra-large-font-size);
   }
 }
 

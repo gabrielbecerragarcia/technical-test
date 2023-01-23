@@ -1,7 +1,7 @@
 <div class="container" *ngIf="!loading">
   <div class="show-info">
     <div class="show-details">
-      <p class="show-name"> {{ show.name }} </p>
+      <p class="show-name bold"> {{ show.name }} </p>
       <p class="show-description"> {{ show.summary }} </p>
       <div class="details-last-content">
         <p class="show-description gray"> {{ parsedGenres }} </p>
@@ -11,7 +11,7 @@
     </div>
   </div>
   <div class="image-item">
-    <img class="show-image" [src]="show.image.medium" alt="show-image">
+    <img class="show-image detail" [src]="show.image.medium" alt="show-image">
   </div>
 </div>
 

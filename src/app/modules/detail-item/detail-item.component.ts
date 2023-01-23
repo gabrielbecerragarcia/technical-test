@@ -1,6 +1,6 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from 'src/app/core/services/api/api.service';
 import { ShowItem } from 'src/app/shared/models/show.model';
 import { first } from 'rxjs';
@@ -18,9 +18,13 @@ export class DetailItemComponent implements OnInit {
 
   constructor(
     private apiService: ApiService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private router: Router
     ) { }
 
+  /**
+  * On init function
+  */
   ngOnInit(): void {
     this.showId = this.activatedRoute.snapshot.params['id'];
     this.searchFilmsById(this.showId);
@@ -36,7 +40,6 @@ export class DetailItemComponent implements OnInit {
       )
       .subscribe({
         next: (response: ShowItem) => {
-          console.log(response)
           this.show = response;
           this.parseDescription();
           this.parseGenres();
@@ -79,6 +82,6 @@ export class DetailItemComponent implements OnInit {
   * Function to get back
   */
   back(): void {
-    window.history.back();
+    this.router.navigate(['']).then();
   }
 }

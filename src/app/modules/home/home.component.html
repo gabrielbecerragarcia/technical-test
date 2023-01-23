@@ -1,9 +1,9 @@
 <div class="container" *ngIf="!loading">
   <div class="show-item" *ngFor="let item of shows" (click)="showDetails(item.show.id)">
-    <img class="show-image" [src]="item.show.image.medium" alt="show-image">
+    <img class="show-image radius" [src]="item.show.image.medium" alt="show-image">
     <div class="show-info">
-      <p class="show-name"> {{ item.show.name }} </p>
-      <p class="show-rating gray"> {{ item.show.rating.average? item.show.rating.average : '-.-' }} </p>
+      <p class="show-name bold"> {{ item.show.name }} </p>
+      <p class="show-rating bold gray"> {{ item.show.rating.average? item.show.rating.average : '-.-' }} </p>
     </div>
   </div>
 </div>
