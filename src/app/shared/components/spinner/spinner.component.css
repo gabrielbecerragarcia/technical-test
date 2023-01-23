@@ -27,11 +27,11 @@
     border: calc(25px / 10) solid transparent;
 }
 .spinner-container .half-circle-spinner .circle.circle-1 {
-    border-top-color: white;
+    border-top-color: var(--primary-color);
     animation: half-circle-spinner-animation 1s infinite;
 }
 .spinner-container .half-circle-spinner .circle.circle-2 {
-    border-bottom-color: white;
+    border-bottom-color: var(--primary-color);
     animation: half-circle-spinner-animation 1s infinite alternate;
 }
 

@@ -13,6 +13,7 @@
   --default-padding: 40px 100px;
   --image-width: 27%;
   --default-shadow: rgba(247, 247, 247, 0.7);
+  --default-max-width: 1024px;
 }
 
 * {
