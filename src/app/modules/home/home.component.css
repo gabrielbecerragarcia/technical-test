@@ -14,6 +14,8 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
+  cursor: pointer;
+  padding-bottom: .5em;
 }
 
 .show-image {
@@ -48,6 +50,31 @@
 
   .show-item {
     width: 27%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .show-item {
+    --c:linear-gradient(#fff 0 0); /* update the color here */
+
+    background: var(--c), var(--c);
+    background-size: .6em .2em;
+    background-position:50% 100%;
+    background-repeat: no-repeat;
+    transition: .3s linear, background-size .3s .2s linear;
+  }
+
+  .show-item:hover {
+    background-size: 40% .2em;
+    background-position: 0% 100%, 100% 100%;
+  }
+
+  .show-image {
+    transition: box-shadow .3s;
+  }
+
+  .show-image:hover {
+    box-shadow: 0 0 25px rgba(247, 247, 247, 0.7);
   }
 }
 

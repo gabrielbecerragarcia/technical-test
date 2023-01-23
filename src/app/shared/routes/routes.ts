@@ -14,6 +14,6 @@ export const ROUTES: Routes = [
         pathMatch: 'prefix',
         loadChildren: () => import('../../modules/detail-item/detail-item.module').then(m => m.DetailItemModule),
         canActivate: [DetailGuard],
-        data: { title: 'detail item' }
+        data: { title: 'Detail item' }
     }
 ];
