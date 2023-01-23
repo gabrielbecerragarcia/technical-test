@@ -3,10 +3,16 @@
     <div class="show-details">
       <p class="show-name"> {{ show.name }} </p>
       <p class="show-description"> {{ show.summary }} </p>
+      <div class="details-last-content">
+        <p class="show-description gray"> {{ parsedGenres }} </p>
+        <img class="back-image" src="../../../assets/images/arrow_icon.svg" alt="back-image" (click)="back()">
+      </div>
       <app-star-score [rating]="getRating()"></app-star-score>
     </div>
   </div>
-  <img class="show-image" [src]="show.image.medium" alt="show-image">
+  <div class="image-item">
+    <img class="show-image" [src]="show.image.medium" alt="show-image">
+  </div>
 </div>
 
 <div class="loader" *ngIf="loading">

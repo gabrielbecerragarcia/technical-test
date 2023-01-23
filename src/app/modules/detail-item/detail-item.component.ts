@@ -75,4 +75,10 @@ export class DetailItemComponent implements OnInit {
     }
   }
 
+  /**
+  * Function to get back
+  */
+  back(): void {
+    window.history.back();
+  }
 }

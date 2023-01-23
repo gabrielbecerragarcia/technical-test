@@ -14,6 +14,33 @@ body {
   font-family: 'Lato', sans-serif;
   overflow: scroll;
   background-color: #181730;
+  color: white;
+}
+
+.show-image {
+  width: 100%;
+  border-radius: 20px;
+}
+
+.show-name {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.gray {
+  color: gray;
+}
+
+@media (min-width: 768px) {
+  .show-name {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .show-name {
+    font-size: 22px;
+  }
 }
 
 

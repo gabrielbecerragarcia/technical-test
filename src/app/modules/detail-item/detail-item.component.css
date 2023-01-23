@@ -17,3 +17,49 @@
   margin-top: 14px;
 }
 
+.details-last-content {
+  position: relative;
+}
+
+.back-image {
+  position: absolute;
+  width: 35px;
+  right: -3px;
+  top: -8px;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .container {
+    flex-direction: row;
+    align-items: center;
+    padding: 40px 100px;
+    margin: auto;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
+  }
+
+  .show-info {
+    width: 60%;
+  }
+
+  .image-item {
+    width: 40%;
+  }
+
+  .show-image {
+    width: 100%;
+  }
+}
+
+@media (min-width: 1440px) {
+
+}
+
+
+
+
