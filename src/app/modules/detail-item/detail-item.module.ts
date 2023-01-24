@@ -1,3 +1,4 @@
+import { ButtonModule } from './../../shared/components/button/button.module';
 import { DetailItemComponent } from './detail-item.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -15,7 +16,8 @@ import { StarScoreModule } from 'src/app/shared/components/star-score/star-score
     CommonModule,
     DetailItemRoutingModule,
     SpinnerModule,
-    StarScoreModule
+    StarScoreModule,
+    ButtonModule
   ]
 })
 export class DetailItemModule { }

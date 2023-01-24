@@ -25,6 +25,10 @@
   cursor: pointer;
 }
 
+.button-container{
+  margin-top: 34px;
+}
+
 @media (min-width: 768px) {
   .container {
     flex-direction: row;
@@ -43,6 +47,10 @@
 
   .show-description {
     margin-top: 22px;
+  }
+
+  .button-container{
+    width: 180px;
   }
 }
 

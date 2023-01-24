@@ -8,6 +8,9 @@
         <img class="back-image" src="../../../assets/images/arrow_icon.svg" alt="back-image" (click)="back()">
       </div>
       <app-star-score [rating]="getRating()"></app-star-score>
+      <div class="button-container">
+        <app-button primary="primary" (buttonClick)="back()">Atrás</app-button>
+      </div>
     </div>
   </div>
   <div class="image-item">
