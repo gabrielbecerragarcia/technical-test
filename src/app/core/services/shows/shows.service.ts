@@ -1,3 +1,4 @@
+import { ShowItem } from './../../../shared/models/show.model';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -14,4 +15,19 @@ export class ShowsService {
   }
 
   constructor() { }
+
+  /**
+  * Function to parse description string
+  */
+  getParsedDescrition(show: ShowItem): string {
+    return show.summary.replace(/(<([^>]+)>)/ig, '');
+  }
+
+  /**
+  * Function to parse description string
+  */
+  getParsedGenres(show: ShowItem): string {
+    return show.genres? show.genres.join("   •   ") : '';
+  }
+
 }
