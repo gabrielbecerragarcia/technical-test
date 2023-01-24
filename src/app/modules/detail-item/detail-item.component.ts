@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from 'src/app/core/services/api/api.service';
 import { ShowItem } from 'src/app/shared/models/show.model';
 import { first } from 'rxjs';
+import { ShowsService } from 'src/app/core/services/shows/shows.service';
 
 @Component({
   selector: 'app-detail-item',
@@ -19,7 +20,8 @@ export class DetailItemComponent implements OnInit {
   constructor(
     private apiService: ApiService,
     private activatedRoute: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private showsService: ShowsService
     ) { }
 
   /**
@@ -52,21 +54,17 @@ export class DetailItemComponent implements OnInit {
   }
 
   /**
-  * Function to parse to float average string
+  * Function to return show rating if it exists, else it returns -1
   */
   getRating(): number {
-    if (this.show.rating.average) {
-      return this.show.rating.average;
-    } else {
-      return -1;
-    }
+    return this.show.rating.average || -1;
   }
 
   /**
   * Function to parse description string
   */
   parseDescription(): void {
-    this.show.summary = this.show.summary.replace( /(<([^>]+)>)/ig, '');
+    this.show.summary = this.showsService.getParsedDescrition(this.show);
   }
 
   /**
@@ -74,7 +72,7 @@ export class DetailItemComponent implements OnInit {
   */
   parseGenres(): void {
     if (this.show.genres) {
-      this.parsedGenres = this.show.genres.join("   •   ");
+      this.parsedGenres = this.showsService.getParsedGenres(this.show);
     }
   }
 
