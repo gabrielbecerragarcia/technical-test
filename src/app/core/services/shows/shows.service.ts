@@ -14,8 +14,6 @@ export class ShowsService {
     this.validId = value;
   }
 
-  constructor() { }
-
   /**
   * Function to parse description string
   */

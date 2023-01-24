@@ -10,8 +10,6 @@ export class StarScoreComponent implements OnChanges {
   parsedRating!: number;
   hideStars : boolean = false;
 
-  constructor() { }
-
   /**
    * OnChanges function
    */
@@ -20,7 +18,7 @@ export class StarScoreComponent implements OnChanges {
   }
 
   /**
-   * Function to
+   * Function to convert rating of 10 into stars of 5
    */
   parseRating(): void {
     if (this.rating >= 0) {

@@ -29,6 +29,12 @@
   margin-top: 34px;
 }
 
+.title-zone {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 @media (min-width: 768px) {
   .container {
     flex-direction: row;

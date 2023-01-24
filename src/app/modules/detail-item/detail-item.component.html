@@ -1,13 +1,15 @@
 <div class="container" *ngIf="!loading">
   <div class="show-info">
     <div class="show-details">
-      <p class="show-name bold"> {{ show.name }} </p>
+      <div class="title-zone">
+        <p class="show-name bold"> {{ show.name }} </p>
+        <app-star-score [rating]="getRating()"></app-star-score>
+      </div>
       <p class="show-description"> {{ show.summary }} </p>
       <div class="details-last-content">
         <p class="show-description gray"> {{ parsedGenres }} </p>
         <img class="back-image" src="../../../assets/images/arrow_icon.svg" alt="back-image" (click)="back()">
       </div>
-      <app-star-score [rating]="getRating()"></app-star-score>
       <div class="button-container">
         <app-button primary="primary" (buttonClick)="back()">Atrás</app-button>
       </div>
