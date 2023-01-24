@@ -64,7 +64,7 @@ export class DetailItemComponent implements OnInit {
   * Function to parse description string
   */
   parseDescription(): void {
-    this.show.summary = this.showsService.getParsedDescrition(this.show);
+    this.show.summary = this.showsService.getParsedDescrition(this.show.summary);
   }
 
   /**

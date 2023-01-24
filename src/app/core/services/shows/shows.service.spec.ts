@@ -13,4 +13,10 @@ describe('ShowsService', () => {
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
+
+  it('should delete html tags', () => {
+
+    expect(service.getParsedDescrition('hola<p> soy un test')).toBe('hola soy un test')
+  })
+
 });

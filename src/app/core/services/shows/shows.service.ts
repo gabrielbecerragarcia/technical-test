@@ -17,8 +17,8 @@ export class ShowsService {
   /**
   * Function to parse description string
   */
-  getParsedDescrition(show: ShowItem): string {
-    return show.summary.replace(/(<([^>]+)>)/ig, '');
+  getParsedDescrition(show: string): string {
+    return show.replace(/(<([^>]+)>)/ig, '');
   }
 
   /**
